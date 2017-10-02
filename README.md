@@ -10,7 +10,7 @@
 
 ```
 wget -N --no-check-certificate https://raw.githubusercontent.com/S8cloud/BBR/master/bbr.sh 
-chmod +x bbr.sh && ./bbs.sh install
+chmod +x bbr.sh && ./bbr.sh install
 ```
 
 * You may need to **reboot** the server and then run `bbr.sh` again to start BBR:
