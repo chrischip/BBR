@@ -18,7 +18,7 @@ installbbr(){
 	echo 1 > /proc/sys/net/ipv4/icmp_echo_ignore_all
 	update-grub
 	
-	echo -e "\033[42;37m[Attention]\033[0mPlease run after restart\033[42;37m bash bbr.sh start \033[0m"
+	echo -e "Please run ./bbr.sh start after restart"
 	stty erase '^H' && read -p "Need restart, Restart Now? [Y/n]:" yn
 	[ -z "${yn}" ] && yn="y"
 		if [[ $yn == [Yy] ]]; then
