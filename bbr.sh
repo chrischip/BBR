@@ -12,6 +12,8 @@ installbbr(){
 	#Install GCC
 	apt-get update && apt-get upgrade -y
 	apt-get install build-essential make linux-image-4.9.0-3-amd64 linux-image-amd64 linux-headers-4.9.0-3-amd64 -y
+	echo 3 > /proc/sys/net/ipv4/tcp_fastopen
+	echo 1 > /proc/sys/net/ipv4/icmp_echo_ignore_all
 	update-grub
 	echo -e "[ATTENTION!] After restart please run `bash bbr.sh start` to install BBR!"
 	stty erase '^H' && read -p "Restart Now? [Y/n] :" yn
