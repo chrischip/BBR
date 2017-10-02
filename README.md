@@ -9,7 +9,7 @@
 * Run the following script on your Debian 9 server with **ROOT user or sudo privilige**.
 
 ```
-wget https://raw.githubusercontent.com/S8cloud/BBR/master/bbr.sh && bash bbr.sh install
+wget -N –no-check-certificate https://raw.githubusercontent.com/S8cloud/BBR/master/bbr.sh && bash bbr.sh install
 ```
 
 * You may need to **reboot** the server and then run `bbr.sh` again to start BBR:
