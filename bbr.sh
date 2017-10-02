@@ -27,16 +27,16 @@ startbbr(){
     mkdir -p $dir/tsunami && cd $dir/tsunami
 	wget -O ./tcp_tsunami.c https://gist.github.com/anonymous/ba338038e799eafbba173215153a7f3a/raw/55ff1e45c97b46f12261e07ca07633a9922ad55d/tcp_tsunami.c
 	echo "obj-m:=tcp_tsunami.o" > Makefile
-	make -C /lib/modules/$(uname -r)/build M=`pwd` modules CC=/usr/bin/gcc-4.9
+	make -C /lib/modules/$(uname -r)/build M=`pwd` modules CC=/usr/bin/gcc-6
 	insmod tcp_tsunami.ko
     	cp -rf ./tcp_tsunami.ko /lib/modules/$(uname -r)/kernel/net/ipv4
     	depmod -a
     	modprobe tcp_tsunami
 	rm -rf /etc/sysctl.conf
-	wget -O /etc/sysctl.conf -N --no-check-certificate https://raw.githubusercontent.com/FunctionClub/YankeeBBR/master/sysctl.conf
+	wget -O /etc/sysctl.conf -N --no-check-certificate https://raw.githubusercontent.com/FunctionClub/S8Cloud/master/sysctl.conf
 	sysctl -p
     cd .. && rm -rf $dir/tsunami
-	echo "魔改版BBR启动成功！"
+	echo "Install Success! Use `lsmod | grep tsunami` to check."
 }
 
 action=$1
@@ -46,7 +46,7 @@ case "$action" in
 	${action}bbr
 	;;
 	*)
-	echo "输入错误 !"
-	echo "用法: { install | start }"
+	echo "Wrong Input"
+	echo "Use: { install | start }"
 	;;
 esac
