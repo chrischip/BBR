@@ -32,9 +32,9 @@ startbbr(){
     	depmod -a
     	modprobe tcp_tsunami
 	rm -rf /etc/sysctl.conf
-	wget -O /etc/sysctl.conf -N --no-check-certificate https://raw.githubusercontent.com/FunctionClub/S8Cloud/master/sysctl.conf
+	wget -O /etc/sysctl.conf -N --no-check-certificate https://raw.githubusercontent.com/S8Cloud/YankeeBBR/master/sysctl.conf
 	sysctl -p
-    cd .. && rm -rf $dir/tsunami
+	cd .. && rm -rf $dir/tsunami
 	echo "Install Success! Use `lsmod | grep tsunami` to check."
 }
 
