@@ -12,7 +12,8 @@ installbbr(){
 	rm /etc/apt/sources.list
 	wget -O /etc/apt/sources.list -N --no-check-certificate https://raw.githubusercontent.com/S8Cloud/BBR/master/sources.list
 	apt-get update && apt-get upgrade -y && apt-get dist-upgrade -y
-	apt-get install build-essential make linux-image-4.9.0-3-amd64 linux-image-amd64 linux-headers-4.9.0-3-amd64 automake curl vim git sudo unzip apt-transport-https screen lsb-release ca-certificates python python-pip -y
+	apt-get autoremove && apt-get autoclean
+	apt-get install build-essential libssl1.0.0 make linux-image-4.9.0-3-amd64 linux-image-amd64 linux-headers-4.9.0-3-amd64 automake curl vim git sudo unzip apt-transport-https screen lsb-release ca-certificates python python-pip -y
 	echo 3 > /proc/sys/net/ipv4/tcp_fastopen
 	echo 1 > /proc/sys/net/ipv4/icmp_echo_ignore_all
 	update-grub
