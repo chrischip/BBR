@@ -19,7 +19,7 @@ installbbr(){
 	update-grub
 	
 	echo -e "Please run ./bbr.sh start after restart"
-	stty erase '^H' && read -p "Need restart, Restart Now? [Y/n]:" yn
+	read -p "Need restart, Restart Now? [Y/n]:" yn
 	[ -z "${yn}" ] && yn="y"
 		if [[ $yn == [Yy] ]]; then
 			echo -e "Rebooting..."
