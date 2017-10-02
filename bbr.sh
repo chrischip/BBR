@@ -17,7 +17,7 @@ installbbr(){
 	echo 3 > /proc/sys/net/ipv4/tcp_fastopen
 	echo 1 > /proc/sys/net/ipv4/icmp_echo_ignore_all
 	update-grub
-	echo "After restart please run `bash bbr.sh start` to install BBR!"
+	echo -e "After restart please run `bash bbr.sh start` to install BBR!"
 	stty erase '^H' && read -p "Restart Now? [Y/n] :" yn
 	[ -z "${yn}" ] && yn="y"
 		if [[ $yn == [Yy] ]]; then
