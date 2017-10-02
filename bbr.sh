@@ -35,7 +35,8 @@ startbbr(){
 	wget -O /etc/sysctl.conf -N --no-check-certificate https://raw.githubusercontent.com/S8Cloud/YankeeBBR/master/sysctl.conf
 	sysctl -p
 	cd .. && rm -rf $dir/tsunami
-	echo "Install Success! Use `lsmod | grep tsunami` to check."
+	lsmod | grep tsunami
+	echo "Install Success!"
 }
 
 action=$1
