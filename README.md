@@ -1,6 +1,8 @@
 # BBR For Debian 9
 
-> Please note that this script is made and tested on **Debian 9 (stretch) only**. Other Debian system (e.g. Debian 8 jessie) may work as well but I could not sure. Other linux system including *Ubuntu* and *CentOS* is **NOT Compatible**!
+> Please note that this script is made for and tested on **Debian 9 (stretch) ONLY**. 
+> Other Debian version (e.g. Debian 8 jessie) may work as well but I am not sure. 
+> Other Linux system including *Ubuntu* and *CentOS* is **NOT Compatible**!
 
 ## Install Guide
 
