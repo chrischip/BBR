@@ -13,11 +13,11 @@ installbbr(){
 	apt-get update && apt-get upgrade -y
 	apt-get install build-essential make linux-image-4.9.0-3-amd64 linux-image-amd64 linux-headers-4.9.0-3-amd64 -y
 	update-grub
-	echo -e "\033[42;37m[注意]\033[0m 重启VPS后，请重新运行脚本开启魔改BBR \033[42;37m bash bbr.sh start \033[0m"
-	stty erase '^H' && read -p "需要重启VPS后，才能开启BBR，是否现在重启 ? [Y/n] :" yn
+	echo -e "[ATTENTION!] After restart please run `bash bbr.sh start` to install BBR!"
+	stty erase '^H' && read -p "Restart Now? [Y/n] :" yn
 	[ -z "${yn}" ] && yn="y"
 		if [[ $yn == [Yy] ]]; then
-			echo -e "\033[41;37m[信息]\033[0m VPS 重启中..."
+			echo -e "Restarting..."
 			reboot
 		fi
 }
