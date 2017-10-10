@@ -13,11 +13,11 @@ installbbr(){
 	wget -O /etc/apt/sources.list -N --no-check-certificate https://raw.githubusercontent.com/S8Cloud/BBR/master/sources.list
 	apt-get update && apt-get upgrade -y && apt-get dist-upgrade -y
 	apt-get autoremove && apt-get autoclean
-	apt-get install build-essential libssl1.0.0 make linux-image-4.9.0-3-amd64 linux-image-amd64 linux-headers-4.9.0-3-amd64 automake curl vim git sudo unzip apt-transport-https screen lsb-release ca-certificates python python-pip -y
+	apt-get install build-essential libssl1.0.0 make linux-image-4.9.0-4-amd64 linux-image-amd64 linux-headers-4.9.0-4-amd64 automake curl vim git sudo unzip apt-transport-https screen lsb-release ca-certificates python python-pip python3 -y
+	apt-get -t stretch-backports update && apt-get -t stretch-backports upgrade -y
 	echo 3 > /proc/sys/net/ipv4/tcp_fastopen
 	echo 1 > /proc/sys/net/ipv4/icmp_echo_ignore_all
 	update-grub
-	
 	echo -e "Please run ./bbr.sh start after restart"
 	read -p "Need restart, Restart Now? [Y/n]:" yn
 	[ -z "${yn}" ] && yn="y"
