@@ -6,5 +6,5 @@ deb http://debian-archive.trafficmanager.net/debian stretch-updates main contrib
 # deb-src http://debian-archive.trafficmanager.net/debian stretch-updates main contrib non-free
 deb http://debian-archive.trafficmanager.net/debian stretch-backports main contrib non-free
 # deb-src http://debian-archive.trafficmanager.net/debian stretch-backports main contrib non-free
-deb http://debian-archive.trafficmanager.net/debian jessie main contrib non-free
+# deb http://debian-archive.trafficmanager.net/debian jessie main contrib non-free
 # deb-src http://debian-archive.trafficmanager.net/debian jessie main contrib non-free
