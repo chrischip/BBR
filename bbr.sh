@@ -17,6 +17,8 @@ installbbr(){
 	pip install speedtest-cli cymysql
 	apt-get -t stretch-backports update && apt-get -t stretch-backports upgrade -y
 	update-grub
+	echo 3 > /proc/sys/net/ipv4/tcp_fastopen		
+	echo 1 > /proc/sys/net/ipv4/icmp_echo_ignore_all
 	echo -e "Please run ./bbr.sh start after restart"
 	read -p "Need restart, Restart Now? [Y/n]:" yn
 	[ -z "${yn}" ] && yn="y"
